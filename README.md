@@ -1,348 +1,430 @@
 # 📚 BookSwap Marketplace
 
-A modern, responsive web application for exchanging used books within a community. Built with vanilla HTML, CSS, and JavaScript featuring JWT authentication, real-time search, and a beautiful glassmorphism UI.
+A full-stack web application for exchanging used books within a community. Built with the MERN stack, featuring real-time book management, secure authentication, and intuitive user experience.
 
-![BookSwap Marketplace](https://img.shields.io/badge/Status-Complete-green)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Version](https://img.shields.io/badge/Version-1.0.0-orange)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-success)](https://bookswap-noaq.onrender.com)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Express.js](https://img.shields.io/badge/Express.js-404D59?logo=express&logoColor=white)](https://expressjs.com/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)](https://nodejs.org/)
+
+## 🌐 Live Application
+
+**🔗 [Visit BookSwap Marketplace](https://bookswap-noaq.onrender.com)**
+
+> **Note**: The app is hosted on Render's free tier, so it may take 30-60 seconds to load initially due to cold start.
 
 ## ✨ Features
 
-### 🔐 User Authentication
+### 🔐 Authentication & Authorization
 - **JWT-based authentication** with secure token management
-- **User registration and login** with form validation
-- **Session persistence** and automatic logout
-- **User profile management** with bio and personal information
+- **Protected routes** and middleware authorization
+- **User registration** with email validation
+- **Password hashing** with bcrypt
 
 ### 📖 Book Management
-- **Add books** with detailed information (title, author, genre, condition, description)
-- **Book categorization** by genre (Fiction, Mystery, Romance, etc.)
-- **Condition tracking** (Excellent, Good, Fair, Poor)
-- **Image placeholders** with Font Awesome icons
-- **Date tracking** for when books were added
+- **CRUD operations** for book listings
+- **Image upload** with Cloudinary integration
+- **Advanced search** and filtering capabilities
+- **Book categorization** by genre and condition
+- **Real-time availability** status
 
-### 🔍 Advanced Search & Filtering
-- **Real-time search** by title and author
-- **Filter by condition** with dropdown selection
-- **Sort functionality** (Title A-Z, Author A-Z, Condition, Newest First)
-- **Clear filters** option for easy reset
-- **No results messaging** with helpful suggestions
+### 🤝 Exchange System
+- **Request management** with status tracking
+- **Notification system** for request updates
+- **Exchange history** and analytics
+- **User ratings** and reviews
 
-### 🤝 Request Management System
-- **Send book requests** to other users
-- **Three-status system**: Pending, Accepted, Declined
-- **Manage incoming requests** (accept/decline functionality)
-- **Track sent requests** with status updates
-- **Prevent duplicate requests** for the same book
+### 📊 Dashboard & Analytics
+- **Personal statistics** and metrics
+- **Exchange history** tracking
+- **User profile** management
+- **Activity timeline**
 
-### 📊 User Dashboard & Analytics
-- **Personal statistics** dashboard showing:
-  - Total books listed
-  - Active requests count
-  - Completed exchanges
-  - User rating
-- **Exchange history** tracking all past transactions
-- **Profile statistics** with visual cards
-- **Member since** date tracking
+### 📱 Responsive Design
+- **Mobile-first** approach
+- **Cross-browser** compatibility
+- **Modern UI/UX** with React components
+- **Loading states** and error handling
 
-### 🎨 Modern UI/UX
-- **Glassmorphism design** with backdrop blur effects
-- **Responsive grid layout** that adapts to screen sizes
-- **Interactive hover effects** and smooth transitions
-- **Tab-based navigation** for organized content
-- **Modal dialogs** for detailed book views
-- **Toast notifications** for user feedback
-- **Mobile-first responsive design**
+## 🛠️ Tech Stack
 
-## 🚀 Quick Start
+### Frontend
+- **React 18** - Component-based UI library
+- **React Router** - Client-side routing
+- **Axios** - HTTP client for API calls
+- **CSS Modules** - Scoped styling
+- **React Hooks** - State and lifecycle management
 
-### Demo Credentials
-```
-Email: demo@example.com
-Password: demo123
-```
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+- **JWT** - JSON Web Tokens for authentication
+- **bcrypt** - Password hashing
+- **Cloudinary** - Image storage and management
+- **CORS** - Cross-origin resource sharing
 
-### Installation
+### Deployment
+- **Render** - Cloud hosting platform
+- **MongoDB Atlas** - Cloud database service
+- **Environment Variables** - Secure configuration management
 
-1. **Clone or download** the project files
-2. **Open** `index.html` in your web browser
-3. **No build process required** - runs directly in the browser
+## 📁 Project Structure
 
-### Project Structure
 ```
 bookswap-marketplace/
 │
-├── index.html          # Main HTML file with embedded CSS and JS
-├── README.md          # This file
-└── assets/           # (Optional) Future assets directory
-    ├── images/       # Book cover images
-    └── icons/        # Custom icons
+├── client/                     # React frontend
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Register.jsx
+│   │   │   ├── Books/
+│   │   │   │   ├── BookCard.jsx
+│   │   │   │   ├── BookForm.jsx
+│   │   │   │   └── BookList.jsx
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── Statistics.jsx
+│   │   │   │   └── UserProfile.jsx
+│   │   │   ├── Layout/
+│   │   │   │   ├── Header.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   └── Sidebar.jsx
+│   │   │   └── Requests/
+│   │   │       ├── RequestCard.jsx
+│   │   │       └── RequestList.jsx
+│   │   ├── pages/              # Main application pages
+│   │   │   ├── Home.jsx
+│   │   │   ├── Browse.jsx
+│   │   │   ├── MyBooks.jsx
+│   │   │   ├── Requests.jsx
+│   │   │   └── Profile.jsx
+│   │   ├── services/           # API service functions
+│   │   │   ├── authService.js
+│   │   │   ├── bookService.js
+│   │   │   └── requestService.js
+│   │   ├── context/            # React Context providers
+│   │   │   └── AuthContext.jsx
+│   │   ├── utils/              # Helper functions
+│   │   │   ├── constants.js
+│   │   │   └── validators.js
+│   │   ├── styles/             # Global styles
+│   │   │   └── index.css
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── server/                     # Node.js backend
+│   ├── controllers/            # Route handlers
+│   │   ├── authController.js
+│   │   ├── bookController.js
+│   │   ├── requestController.js
+│   │   └── userController.js
+│   ├── middleware/             # Custom middleware
+│   │   ├── auth.js
+│   │   ├── upload.js
+│   │   └── errorHandler.js
+│   ├── models/                 # MongoDB schemas
+│   │   ├── User.js
+│   │   ├── Book.js
+│   │   ├── Request.js
+│   │   └── Exchange.js
+│   ├── routes/                 # API routes
+│   │   ├── auth.js
+│   │   ├── books.js
+│   │   ├── requests.js
+│   │   └── users.js
+│   ├── config/                 # Configuration files
+│   │   ├── database.js
+│   │   └── cloudinary.js
+│   ├── utils/                  # Server utilities
+│   │   ├── generateToken.js
+│   │   └── sendEmail.js
+│   ├── .env                    # Environment variables
+│   ├── server.js               # Main server file
+│   ├── package.json
+│   └── package-lock.json
+│
+├── README.md
+├── .gitignore
+└── package.json                # Root package.json for deployment
 ```
 
-## 🛠️ Technical Details
+## 🗄️ Database Schema (MongoDB)
 
-### Technologies Used
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Modern styling with Flexbox/Grid, backdrop filters, animations
-- **JavaScript (ES6+)** - Application logic, DOM manipulation, state management
-- **Font Awesome 6.0** - Icons and visual elements
-
-### Key Features Implementation
-
-#### Mock JWT Authentication
-```javascript
-class MockJWT {
-    static encode(payload) {
-        return btoa(JSON.stringify(payload));
-    }
-    
-    static decode(token) {
-        try {
-            return JSON.parse(atob(token));
-        } catch {
-            return null;
-        }
-    }
-}
-```
-
-#### Real-time Search & Filter
-```javascript
-function filterAndSortBooks() {
-    const searchTerm = document.getElementById('searchBooks').value.toLowerCase();
-    const conditionFilter = document.getElementById('conditionFilter').value;
-    const sortBy = document.getElementById('sortBooks').value;
-    
-    let filteredBooks = books.filter(book => {
-        const matchesSearch = book.title.toLowerCase().includes(searchTerm) || 
-                            book.author.toLowerCase().includes(searchTerm);
-        const matchesCondition = !conditionFilter || book.condition === conditionFilter;
-        return matchesSearch && matchesCondition;
-    });
-    
-    // Sort and display logic...
-}
-```
-
-#### State Management
-- **In-memory data storage** during session
-- **No external dependencies** - pure vanilla JavaScript
-- **Reactive UI updates** based on state changes
-
-## 📱 Responsive Design
-
-The application is fully responsive and works seamlessly across:
-
-- **Desktop** (1200px+)
-- **Tablet** (768px - 1199px)
-- **Mobile** (320px - 767px)
-
-### Mobile Features
-- **Touch-friendly** button sizing
-- **Collapsible navigation** 
-- **Optimized layouts** for small screens
-- **Swipe-friendly** modal dialogs
-
-## 🎯 User Journey
-
-### New User Flow
-1. **Welcome Screen** with feature overview
-2. **Sign Up** with email and password
-3. **Dashboard** with tutorial hints
-4. **Add First Book** guided experience
-5. **Browse Books** and make first request
-
-### Returning User Flow
-1. **Login** with existing credentials
-2. **Dashboard** with personalized stats
-3. **Manage Requests** and respond to others
-4. **Browse New Books** with saved preferences
-5. **Update Profile** and view exchange history
-
-## 📊 Data Models
-
-### User Model
+### Users Collection
 ```javascript
 {
-    id: number,
-    name: string,
-    email: string,
-    password: string,    // In production: hashed
-    bio: string,
-    joinDate: string,
-    rating: number
+  _id: ObjectId,
+  name: String,
+  email: String (unique, required),
+  password: String (hashed),
+  bio: String,
+  avatar: String (Cloudinary URL),
+  rating: Number (default: 0),
+  totalExchanges: Number (default: 0),
+  isActive: Boolean (default: true),
+  createdAt: Date,
+  updatedAt: Date
 }
 ```
 
-### Book Model
+### Books Collection
 ```javascript
 {
-    id: number,
-    title: string,
-    author: string,
-    genre: string,
-    condition: 'excellent' | 'good' | 'fair' | 'poor',
-    description: string,
-    ownerId: number,
-    ownerName: string,
-    dateAdded: string
+  _id: ObjectId,
+  title: String (required),
+  author: String (required),
+  genre: String,
+  condition: {
+    type: String,
+    enum: ['excellent', 'good', 'fair', 'poor']
+  },
+  description: String,
+  image: String (Cloudinary URL),
+  owner: ObjectId (ref: 'User'),
+  isAvailable: Boolean (default: true),
+  requestCount: Number (default: 0),
+  createdAt: Date,
+  updatedAt: Date
 }
 ```
 
-### Request Model
+### Requests Collection
 ```javascript
 {
-    id: number,
-    bookId: number,
-    bookTitle: string,
-    requesterId: number,
-    requesterName: string,
-    ownerId: number,
-    ownerName: string,
-    status: 'pending' | 'accepted' | 'declined',
-    createdAt: string
+  _id: ObjectId,
+  book: ObjectId (ref: 'Book'),
+  requester: ObjectId (ref: 'User'),
+  owner: ObjectId (ref: 'User'),
+  status: {
+    type: String,
+    enum: ['pending', 'accepted', 'declined'],
+    default: 'pending'
+  },
+  message: String,
+  createdAt: Date,
+  updatedAt: Date
 }
 ```
 
-## 🔧 Customization
-
-### Styling
-- **CSS Custom Properties** for easy theme changes
-- **Modular CSS classes** for component styling
-- **Responsive breakpoints** easily adjustable
-
-### Adding Features
-- **Modular JavaScript** structure for easy extension
-- **Event-driven architecture** for new functionality
-- **Clear separation** between UI and business logic
-
-### Configuration Options
+### Exchanges Collection
 ```javascript
-// Easy customization points
-const CONFIG = {
-    ITEMS_PER_PAGE: 12,
-    NOTIFICATION_DURATION: 3000,
-    DEFAULT_SORT: 'title',
-    SUPPORTED_GENRES: ['fiction', 'non-fiction', 'mystery', ...],
-    CONDITION_LEVELS: ['excellent', 'good', 'fair', 'poor']
-};
+{
+  _id: ObjectId,
+  request: ObjectId (ref: 'Request'),
+  book: ObjectId (ref: 'Book'),
+  lender: ObjectId (ref: 'User'),
+  borrower: ObjectId (ref: 'User'),
+  startDate: Date,
+  expectedReturnDate: Date,
+  actualReturnDate: Date,
+  status: {
+    type: String,
+    enum: ['active', 'completed', 'overdue'],
+    default: 'active'
+  },
+  lenderRating: Number (1-5),
+  borrowerRating: Number (1-5),
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js** (v14 or higher)
+- **MongoDB** (local installation or MongoDB Atlas)
+- **npm** or **yarn** package manager
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/bookswap-marketplace.git
+cd bookswap-marketplace
+```
+
+2. **Install dependencies**
+```bash
+# Install server dependencies
+cd server
+npm install
+
+# Install client dependencies
+cd ../client
+npm install
+```
+
+3. **Environment Variables**
+Create `.env` file in the server directory:
+```env
+NODE_ENV=development
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/bookswap
+JWT_SECRET=your_jwt_secret_key
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+4. **Start the application**
+```bash
+# Start server (from server directory)
+npm run dev
+
+# Start client (from client directory)
+npm start
+```
+
+5. **Access the application**
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:5000`
+
+## 📡 API Endpoints
+
+### Authentication
+```
+POST   /api/auth/register     # User registration
+POST   /api/auth/login        # User login
+GET    /api/auth/me           # Get current user
+PUT    /api/auth/profile      # Update profile
+```
+
+### Books
+```
+GET    /api/books             # Get all books (with filters)
+POST   /api/books             # Create new book
+GET    /api/books/:id         # Get single book
+PUT    /api/books/:id         # Update book
+DELETE /api/books/:id         # Delete book
+GET    /api/books/user/:id    # Get user's books
+```
+
+### Requests
+```
+GET    /api/requests          # Get user's requests
+POST   /api/requests          # Create new request
+PUT    /api/requests/:id      # Update request status
+DELETE /api/requests/:id      # Cancel request
+GET    /api/requests/received # Get received requests
+```
+
+### Users
+```
+GET    /api/users/:id         # Get user profile
+PUT    /api/users/:id         # Update user profile
+GET    /api/users/:id/stats   # Get user statistics
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+```env
+# Server Configuration
+NODE_ENV=production
+PORT=5000
+
+# Database
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/bookswap
+
+# Authentication
+JWT_SECRET=your_super_secure_jwt_secret
+JWT_EXPIRE=30d
+
+# Image Upload
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_key
+CLOUDINARY_API_SECRET=your_cloudinary_secret
+
+# Email (Optional)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_EMAIL=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
 ```
 
 ## 🚀 Deployment
 
-### Static Hosting
-Deploy easily to any static hosting service:
+### Render Deployment
+This project is configured for easy deployment on Render:
 
-- **GitHub Pages** - Push to repository and enable Pages
-- **Netlify** - Drag and drop the HTML file
-- **Vercel** - Connect GitHub repository
-- **AWS S3** - Upload to S3 bucket with static website hosting
+1. **Connect your GitHub repository** to Render
+2. **Set environment variables** in Render dashboard
+3. **Deploy** with the following settings:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+   - **Node Version**: `18`
 
-### Local Development
+### Manual Deployment
 ```bash
-# Option 1: Python (Python 3)
-python -m http.server 8000
+# Build for production
+cd client
+npm run build
 
-# Option 2: Node.js (if you have it installed)
-npx http-server
-
-# Option 3: PHP (if available)
-php -S localhost:8000
-
-# Then visit: http://localhost:8000
+# Start server
+cd ../server
+npm start
 ```
 
-## 🛡️ Security Considerations
+## 🔮 Future Enhancements
 
-### Current Implementation (Demo)
-- **Client-side only** - suitable for prototypes and demos
-- **Mock authentication** - not secure for production
-- **In-memory storage** - data doesn't persist
+### Phase 2
+- [ ] **Real-time messaging** between users
+- [ ] **Push notifications** for mobile browsers
+- [ ] **Advanced search** with Elasticsearch
+- [ ] **Book recommendations** using ML
+- [ ] **Social features** (follow users, activity feed)
 
-### Production Recommendations
-- **Server-side authentication** with secure JWT implementation
-- **Database integration** (PostgreSQL, MongoDB, etc.)
-- **Input validation and sanitization**
-- **HTTPS enforcement**
-- **Rate limiting** for API endpoints
-- **Password hashing** with bcrypt or similar
-
-## 🔄 Future Enhancements
-
-### Phase 2 Features
-- [ ] **Real-time chat** between users
-- [ ] **Book condition photos** upload
-- [ ] **Location-based** filtering
-- [ ] **Rating and review** system
-- [ ] **Wishlist** functionality
-- [ ] **Email notifications**
-
-### Phase 3 Features
-- [ ] **Mobile app** (React Native/Flutter)
-- [ ] **Book scanning** with barcode/ISBN lookup
-- [ ] **Social features** (follow users, recommendations)
-- [ ] **Advanced analytics** dashboard
+### Phase 3
+- [ ] **Mobile app** (React Native)
+- [ ] **Barcode scanning** for book ISBN
+- [ ] **Integration** with Goodreads API
 - [ ] **Multi-language** support
-- [ ] **Dark mode** toggle
-
-### Technical Improvements
-- [ ] **Progressive Web App** (PWA) capabilities
-- [ ] **Offline functionality** with Service Workers
-- [ ] **State management** with Redux or similar
-- [ ] **TypeScript** conversion for better type safety
-- [ ] **Unit testing** with Jest
-- [ ] **E2E testing** with Playwright
+- [ ] **Payment integration** for shipping costs
 
 ## 🤝 Contributing
 
-### Development Setup
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Test thoroughly
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
-
-### Code Style
-- **2 spaces** for indentation
-- **Semantic HTML** structure
-- **BEM methodology** for CSS classes
-- **ES6+** JavaScript features
-- **Descriptive** variable and function names
-
-### Bug Reports
-Please include:
-- Browser and version
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots (if applicable)
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## 👨‍💻 Author
 
-- **Your Name** - *Initial work* - [@yourusername](https://github.com/yourusername)
+**Your Name**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- Portfolio: [your-portfolio.com](https://your-portfolio.com)
+- Email: your.email@example.com
 
 ## 🙏 Acknowledgments
 
-- **Font Awesome** for beautiful icons
-- **Google Fonts** for typography
-- **CSS-Tricks** for modern CSS techniques
-- **MDN Web Docs** for excellent documentation
-- **The open source community** for inspiration
-
-## 📞 Support
-
-- **Documentation**: Check this README and inline code comments
-- **Issues**: Open an issue on GitHub
-- **Discussions**: Use GitHub Discussions for questions
-- **Email**: your.email@example.com
+- **MongoDB Atlas** for cloud database hosting
+- **Render** for free application hosting
+- **Cloudinary** for image storage and optimization
+- **React community** for excellent documentation
+- **Express.js team** for the robust backend framework
 
 ---
 
-**Happy Book Swapping! 📚✨**
+<div align="center">
 
-> *"A room without books is like a body without a soul."* - Cicero
+### 🌟 If you found this project helpful, please give it a star!
+
+**Made with ❤️ and the MERN stack**
+
+</div>
