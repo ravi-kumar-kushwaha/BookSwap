@@ -3,7 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Login from "./Pages/Login";
-import Signup from "./Pages/SignUp";
+import Signup from "./Pages/Signup";
 import Footer from "./Components/Footer";
 import AddBook from "./Pages/AddBook";
 import Home from "./Components/Home";
