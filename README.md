@@ -50,7 +50,7 @@ A full-stack web application for exchanging used books within a community. Built
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** - Component-based UI library
+- **React 19** - Component-based UI library
 - **React Router** - Client-side routing
 - **Axios** - HTTP client for API calls
 - **CSS Modules** - Scoped styling
