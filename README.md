@@ -411,7 +411,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Ravi Kumar Kushwaha**
 - GitHub: [https://github.com/ravi-kumar-kushwaha]([https://github.com/yourusername](https://github.com/ravi-kumar-kushwaha))
 - LinkedIn: [https://www.linkedin.com/in/ravikumarkushwaha]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/ravikumarkushwaha))
-- Portfolio: [your-portfolio.com](https://your-portfolio.com)
 - Email: ravikumarkush3@gmail.com
 
 ## 🙏 Acknowledgments
