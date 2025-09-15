@@ -297,16 +297,19 @@ POST   /api/auth/register     # User registration
 POST   /api/auth/login        # User login
 GET    /api/auth/me           # Get current user
 PUT    /api/auth/profile      # Update profile
+DELETE /api/auth/delete       # Delete user
+GET    /api/auth/all-users    # Get all users
 ```
 
 ### Books
 ```
 GET    /api/books             # Get all books (with filters)
-POST   /api/books             # Create new book
-GET    /api/books/:id         # Get single book
-PUT    /api/books/:id         # Update book
-DELETE /api/books/:id         # Delete book
-GET    /api/books/user/:id    # Get user's books
+POST   /api/book             # Create new book
+GET    /api/book/:id         # Get single book
+PUT    /api/book/:id         # Update book
+DELETE /api/book/:id         # Delete book
+GET    /api/books/user/:id   # Get user's books
+PUT    /api/book/:id         # Update book image
 ```
 
 ### Requests
@@ -405,11 +408,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**Ravi Kumar Kushwaha**
+- GitHub: [@yourusername]([https://github.com/yourusername](https://github.com/ravi-kumar-kushwaha))
+- LinkedIn: [Your LinkedIn]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/ravikumarkushwaha))
 - Portfolio: [your-portfolio.com](https://your-portfolio.com)
-- Email: your.email@example.com
+- Email: ravikumarkush3@gmail.com
 
 ## 🙏 Acknowledgments
 
